@@ -1,0 +1,12 @@
+{
+  "name": "keycode",
+  "repo": "timoxley/keycode",
+  "description": "Map of keyboard codes",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
