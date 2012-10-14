@@ -49,6 +49,34 @@ KeyCode and KeyName maps are available directly as `keycode.keyCodes` and
 
 ```
 
+## Note: keydown/keyup vs. keypress
+
+`keypress` event's `keyCode`/`which` property is a different format
+to that of `keydown` & `keyup`. Instead of the code of the keyboard event,
+it's the character's ASCII code. This also means non display characters
+will not be fired on `keypress`. **For this reason, you should not use
+`keycode()` with `keypress` events**.
+
+TODO: add logic for extracting values intelligently from a
+`KeyboardEvent`.
+
+```js
+
+// Example: Pressing the 'a' key.
+
+document.addEventListener('keydown', function(e) {
+  // e.keyCode is 65
+  console.log("Key Down", keycode(e.keyCode)) // => 'a' Correct
+})
+
+document.addEventListener('keypress', function(e) {
+  // e.keyCode is 97
+  console.log("Key Press ", keycode(e.keyCode)) // => 'Numpad 1'
+Incorrect
+})
+
+```
+
 ## Credit
 
 Original code lifted from http://jsfiddle.net/vWx8V/ via http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
