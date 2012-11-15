@@ -9,8 +9,16 @@
  * @api public
  */
 module.exports = function(search) {
-  if (typeof search === 'number') return module.exports.keyCodes[search]
   if (typeof search === 'string') return module.exports.keyNames[search]
+  if (typeof search === 'number') {
+    return keyOf(search, module.exports.keyNames)
+  }
+  function keyOf(value, object) {
+    for (var key in object) {
+      if (object[key] === value) return key;
+    }
+    return undefined
+  }
 }
 
 module.exports.keyCodes = {
