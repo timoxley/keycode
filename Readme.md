@@ -24,24 +24,29 @@ looking up a keycode or a keyname.
 
 ##keycode(keycode:Number)
 
-Returns name for given numeric keycode.
+Returns the lowercase title for given numeric keycode.
 
 ```js
-keycode(13) // => 'Enter'
+keycode(13) // => 'enter'
 ```
 
-##keycode(name:String)
+##keycode(title:String)
 
-Returns numeric keycode for given key name.
+Returns numeric keycode for given key title.
 
 ```js
 keycode('Enter') // => 13
 ```
-
-KeyCode and KeyName maps are available directly as `keycode.code` and `keycode.name` respectively.
+Letter casing is insensitive so the following will still work.
 
 ```js
-keycode.name[13] // => 'Enter'
+keycode('eNtEr') // => 13
+```
+
+KeyCode and KeyName maps are available directly as `keycode.code` and `keycode.title` respectively.
+
+```js
+keycode.title[13] // => 'enter'
 keycode.code['Enter'] // => 13
 ```
 ## Event Support
