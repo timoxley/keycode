@@ -3,7 +3,15 @@ var assert = require('timoxley-assert')
 it('is commutative', function() {
 	var count = 0
 	for (var key in keycode.code) {
-		assert.strictEqual(keycode(key), keycode(keycode(keycode(key))))
+		assert.strictEqual(key, keycode(keycode(key)))
+		count++
+	}
+	console.debug('Tested %d keys', count)
+})
+it('can expose maps', function () {
+	var count = 0
+	for (var name in keycode.code) {
+		assert.strictEqual(name, keycode.title[keycode.code[name]])
 		count++
 	}
 	console.debug('Tested %d keys', count)
