@@ -6,7 +6,7 @@
   "keywords": [],
   "dependencies": {},
   "development": {
-    "timoxley-assert": "*"
+    "timoxley/assert": "*"
   },
   "scripts": [
     "index.js"
