@@ -19,10 +19,6 @@ document.addEventListener('keydown', function(e) {
 
 ## API
 
-- [keyCode](#keycode)
-- [codes](#codes)
-- [names](#names)
-
 The `keycode` method responds differently depending on whether you're
 looking up a keycode or a keyname.
 
@@ -42,28 +38,11 @@ Returns numeric keycode for given key name.
 keycode('Enter') // => 13
 ```
 
-KeyCode and KeyName maps are available directly as `keycode.code` and
-`keycode.name` respectively.
+KeyCode and KeyName maps are available directly as `keycode.code` and `keycode.name` respectively.
 
 ```js
 keycode.name[13] // => 'Enter'
 keycode.code['Enter'] // => 13
-```
-
-## codes
-
-  Get by name
-  
-```js
-exports.code['Enter'] // => 13
-```
-
-## names
-
-  Get by code
-  
-```js
-exports.name[13] // => 'Enter'
 ```
 ## Event Support
 
