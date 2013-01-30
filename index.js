@@ -9,8 +9,12 @@
  * @api public
  */
 exports = module.exports = function (search) {
-	if (typeof search === 'string') return codes[search.toLowerCase()]
-	return names[search]
+	if ('string' == typeof search) {
+		return codes[search.toLowerCase()]
+			|| search.toUpperCase().charCodeAt(0);
+	} else {
+		return names[search];
+	}
 }
 
 /**
@@ -78,7 +82,7 @@ for (var i = 48; i < 58; i++) codes[i - 48] = i
 // '8': 56,
 // '9': 57,
 
-for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
+// for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
 // 'a': 65,
 // 'b': 66,
 // 'c': 67,
