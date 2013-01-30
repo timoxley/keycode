@@ -51,7 +51,7 @@ keycode.code['Enter'] // => 13
 ```
 ## Event Support
 
-[Due to the keypress event being weird](https://github.com/timoxley/keycode/wiki/wtf%3F-keydown-vs-keypress),`keycode `currently does not support the `keypress` event, but this should not be an issue as `keydown` and `keyup` work perfectly fine.
+[Due to the keypress event being weird](https://github.com/timoxley/keycode/wiki/wtf%3F-keydown,-keyup-vs-keypress),`keycode `currently does not support the `keypress` event, but this should not be an issue as `keydown` and `keyup` work perfectly fine.
 
 ## Credit
 
