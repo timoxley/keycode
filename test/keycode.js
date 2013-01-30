@@ -16,3 +16,8 @@ it('can expose maps', function () {
 	}
 	console.debug('Tested %d keys', count)
 })
+
+it('can return a charcode from a letter', function(){
+	assert.strictEqual(keycode('a'), 65);
+	assert.strictEqual(keycode('b'), 66);
+})
