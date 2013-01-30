@@ -8,13 +8,13 @@
  * @return {Mixed}
  * @api public
  */
-exports = module.exports = function (search) {
-  if ('string' == typeof search) {
-    return codes[search.toLowerCase()]
-      || search.toUpperCase().charCodeAt(0);
-  } else {
-    return names[search];
-  }
+exports = module.exports = function(searchInput) {
+  if ('number' === typeof searchInput) return names[searchInput]
+  var search = String(searchInput)
+  var foundNamedKey = codes[search.toLowerCase()]
+  if (foundNamedKey) return foundNamedKey
+  if (search.length === 1) return search.charCodeAt(0)
+  return undefined
 }
 
 /**
@@ -70,50 +70,25 @@ var codes = exports.code = {
 /*!
  * Programatically add the following
  */
+
+// lower case chars
+for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
+
+// numbers
 for (var i = 48; i < 58; i++) codes[i - 48] = i
-// '0': 48,
-// '1': 49,
-// '2': 50,
-// '3': 51,
-// '4': 52,
-// '5': 53,
-// '6': 54,
-// '7': 55,
-// '8': 56,
-// '9': 57,
 
+// function keys
 for (i = 1; i < 13; i++) codes['f'+i] = i + 111
-// 'f1': 112,
-// 'f2': 113,
-// 'f3': 114,
-// 'f4': 115,
-// 'f5': 116,
-// 'f6': 117,
-// 'f7': 118,
-// 'f8': 119,
-// 'f9': 120,
-// 'f10': 121,
-// 'f11': 122,
-// 'f12': 123,
 
+// numpad keys
 for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
-// 'numpad 0': 96,
-// 'numpad 1': 97,
-// 'numpad 2': 98,
-// 'numpad 3': 99,
-// 'numpad 4': 100,
-// 'numpad 5': 101,
-// 'numpad 6': 102,
-// 'numpad 7': 103,
-// 'numpad 8': 104,
-// 'numpad 9': 105,
 
 /**
  * Get by code
  *
  *   exports.name[13] // => 'Enter'
  */
-var names = exports.title = {}
+var names = exports.name = {}
 
 // Create reverse mapping
 for (i in codes) names[codes[i]] = i

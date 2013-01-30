@@ -7,6 +7,7 @@
   console.log("The keyCode for 'Enter' is %d.", keycode('Enter'))
   window.addEventListener('keydown', keydown);
   function keydown(e) {
-    document.getElementById('keyname').innerHTML = (e.which || e.keyCode) + ': ' + keycode(e.which || e.keyCode);
+    document.getElementById('keyname').innerHTML = (e.which ||
+      e.keyCode) + ': ' + keycode(e.which || e.keyCode);
   }
 </script>
