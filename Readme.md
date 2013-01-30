@@ -43,11 +43,11 @@ Letter casing is insensitive so the following will still work.
 keycode('eNtEr') // => 13
 ```
 
-KeyCode and KeyName maps are available directly as `keycode.code` and `keycode.title` respectively.
+KeyCode and KeyName maps are available directly as `keycode.codes` and `keycode.names` respectively.
 
 ```js
-keycode.title[13] // => 'enter'
-keycode.code['Enter'] // => 13
+keycode.names[13] // => 'enter'
+keycode.codes['Enter'] // => 13
 ```
 ## Event Support
 

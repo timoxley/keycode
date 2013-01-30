@@ -22,7 +22,7 @@ exports = module.exports = function(searchInput) {
  *
  *   exports.code['Enter'] // => 13
  */
-var codes = exports.code = {
+var codes = exports.code = exports.codes = {
   'backspace': 8,
   'tab': 9,
   'enter': 13,
@@ -88,7 +88,7 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
  *
  *   exports.name[13] // => 'Enter'
  */
-var names = exports.name = {}
+var names = exports.names = exports.title = {} // title for backward compat
 
 // Create reverse mapping
 for (i in codes) names[codes[i]] = i

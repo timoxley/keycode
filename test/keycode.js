@@ -1,23 +1,8 @@
 var keycode = require('keycode')
 var assert = require('timoxley-assert')
-it('is commutative', function() {
-  var count = 0
-  for (var key in keycode.code) {
-    assert.strictEqual(key, keycode(keycode(key)))
-    count++
-  }
-  console.debug('Tested %d keys', count)
-})
-it('can expose maps', function() {
-  var count = 0
-  for (var name in keycode.code) {
-    assert.strictEqual(name, keycode.title[keycode.code[name]])
-    count++
-  }
-  console.debug('Tested %d keys', count)
-})
 
 it('can return a charcode from a letter', function() {
+  assert.strictEqual(keycode('0'), 48);
   assert.strictEqual(keycode('B'), 66);
   assert.strictEqual(keycode('f1'), 112);
   assert.strictEqual(keycode('9'), 57);
@@ -69,3 +54,22 @@ it('returns undefined for any other passed in type', function() {
   assert.strictEqual(keycode(/.*/), undefined);
   assert.strictEqual(keycode(), undefined);
 })
+
+it('is commutative', function() {
+  var count = 0
+  for (var key in keycode.code) {
+    assert.strictEqual(key, keycode(keycode(key)))
+    count++
+  }
+  console.debug('Tested %d keys', count)
+})
+
+it('exposes keycode/name maps', function() {
+  var count = 0
+  for (var code in keycode.codes) {
+    assert.strictEqual(code, keycode.names[keycode.codes[code]])
+    count++
+  }
+  console.debug('Tested %d keys', count)
+})
+
