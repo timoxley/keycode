@@ -22,6 +22,10 @@ document.addEventListener('keydown', function(e) {
 The `keycode` method responds differently depending on whether you're
 looking up a keycode or a keyname.
 
+##keycode(keycode:Object)
+
+Returns the keycode for the given object's .keyCode.
+
 ##keycode(keycode:Number)
 
 Returns the lowercase title for given numeric keycode.

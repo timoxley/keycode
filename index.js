@@ -1,6 +1,8 @@
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
+var has = ({}).hasOwnProperty
+
 /**
  * Conenience method returns corresponding value for given keyName or keyCode.
  *
@@ -9,6 +11,7 @@
  * @api public
  */
 exports = module.exports = function(searchInput) {
+  if ('object' === typeof searchInput && searchInput && has.call(searchInput, 'keyCode')) searchInput = searchInput.keyCode
   if ('number' === typeof searchInput) return names[searchInput]
   var search = String(searchInput)
   var foundNamedKey = codes[search.toLowerCase()]

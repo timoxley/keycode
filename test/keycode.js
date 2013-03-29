@@ -45,6 +45,11 @@ it('returns code for objects implementing toString function', function() {
   assert.strictEqual(keycode(obj), 65);
 })
 
+it('returns char for objects with a keyCode property', function() {
+  var obj = { keyCode: 65 }
+  assert.strictEqual(keycode(obj), 'a');
+})
+
 it('returns undefined for any other passed in type', function() {
   assert.strictEqual(keycode({}), undefined);
   assert.strictEqual(keycode([]), undefined);
