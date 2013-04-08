@@ -11,7 +11,10 @@ var has = ({}).hasOwnProperty
  * @api public
  */
 exports = module.exports = function(searchInput) {
-  if ('object' === typeof searchInput && searchInput && has.call(searchInput, 'keyCode')) searchInput = searchInput.keyCode
+  if (searchInput && 'object' === typeof searchInput) {
+    var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode
+    if (hasKeyCode) searchInput = hasKeyCode
+  }
   if ('number' === typeof searchInput) return names[searchInput]
   var search = String(searchInput)
   var foundNamedKey = codes[search.toLowerCase()]
