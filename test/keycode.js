@@ -1,5 +1,13 @@
-var keycode = require('keycode')
-var assert = require('timoxley-assert')
+"use strict"
+
+// check if is component
+if (require.modules) {
+  var keycode = require('keycode')
+  var assert = require('timoxley-assert')
+} else {
+  var keycode = require('../')
+  var assert = require('assert')
+}
 
 it('can return a charcode from a letter', function() {
   assert.strictEqual(keycode('0'), 48);
@@ -66,7 +74,6 @@ it('is commutative', function() {
     assert.strictEqual(key, keycode(keycode(key)))
     count++
   }
-  console.debug('Tested %d keys', count)
 })
 
 it('exposes keycode/name maps', function() {
@@ -75,6 +82,5 @@ it('exposes keycode/name maps', function() {
     assert.strictEqual(code, keycode.names[keycode.codes[code]])
     count++
   }
-  console.debug('Tested %d keys', count)
 })
 
