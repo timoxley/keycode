@@ -126,7 +126,13 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
  *
  *   exports.name[13] // => 'Enter'
  */
+
 var names = exports.names = exports.title = {} // title for backward compat
 
 // Create reverse mapping
 for (i in codes) names[codes[i]] = i
+
+// Add aliases
+for (var alias in aliases) {
+  codes[alias] = aliases[alias]
+}

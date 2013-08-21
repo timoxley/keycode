@@ -81,13 +81,13 @@ it('returns undefined for any other passed in type', function() {
 
 it('is commutative', function() {
   for (var key in keycode.code) {
-    assert.strictEqual(key, keycode(keycode(key)))
+    assert.strictEqual(keycode(key), keycode(keycode(keycode(key))))
   }
 })
 
 it('exposes keycode/name maps', function() {
   for (var code in keycode.codes) {
-    assert.equal(keycode(code), keycode(keycode.names[keycode.codes[code]]))
+    assert.strictEqual(keycode(code), keycode(keycode.names[keycode.codes[code]]))
   }
 })
 
