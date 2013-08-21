@@ -17,6 +17,17 @@ it('can return a charcode from a letter', function() {
   assert.strictEqual(keycode('numpad 0'), 96);
 })
 
+
+it('can use aliases from a letter', function() {
+  assert.strictEqual(keycode('ctl'), keycode('ctrl'));
+})
+
+it('does not use alias name when mapping back from a number', function() {
+  for (var key in keycode.aliases) {
+    assert.notStrictEqual(keycode(keycode(key)), key);
+  }
+})
+
 it('is case insensitive', function() {
   assert.strictEqual(keycode('a'), 65);
   assert.strictEqual(keycode('A'), 65);
@@ -69,18 +80,14 @@ it('returns undefined for any other passed in type', function() {
 })
 
 it('is commutative', function() {
-  var count = 0
   for (var key in keycode.code) {
     assert.strictEqual(key, keycode(keycode(key)))
-    count++
   }
 })
 
 it('exposes keycode/name maps', function() {
-  var count = 0
   for (var code in keycode.codes) {
-    assert.strictEqual(code, keycode.names[keycode.codes[code]])
-    count++
+    assert.equal(keycode(code), keycode(keycode.names[keycode.codes[code]]))
   }
 })
 

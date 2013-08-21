@@ -26,7 +26,14 @@ exports = module.exports = function(searchInput) {
   // check codes
   var foundNamedKey = codes[search.toLowerCase()]
   if (foundNamedKey) return foundNamedKey
+
+  // check aliases
+  var foundNamedKey = aliases[search.toLowerCase()]
+  if (foundNamedKey) return foundNamedKey
+
+  // weird character?
   if (search.length === 1) return search.charCodeAt(0)
+
   return undefined
 }
 
@@ -78,6 +85,19 @@ var codes = exports.code = exports.codes = {
   '\\': 220,
   ']': 221,
   "'": 222
+}
+
+var aliases = exports.aliases = {
+  'ctl': 17,
+  'pause': 19,
+  'break': 19,
+  'caps': 20,
+  'escape': 27,
+  'pgup': 33,
+  'pgdn': 33,
+  'ins': 45,
+  'del': 46,
+  'spc': 32
 }
 
 /*!
