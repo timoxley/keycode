@@ -2,6 +2,8 @@
 
   Simple map of keyboard codes.
 
+[![Build Status](https://travis-ci.org/timoxley/keycode.png?branch=master)](https://travis-ci.org/timoxley/keycode)
+
 ## Installation
 
 ```
