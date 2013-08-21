@@ -19,5 +19,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/timoxley/keycode/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0"
   }
 }
