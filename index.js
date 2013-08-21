@@ -10,6 +10,7 @@ var has = ({}).hasOwnProperty
  * @return {Mixed}
  * @api public
  */
+
 exports = module.exports = function(searchInput) {
   // Keyboard Events
   if (searchInput && 'object' === typeof searchInput) {
@@ -42,6 +43,7 @@ exports = module.exports = function(searchInput) {
  *
  *   exports.code['enter'] // => 13
  */
+
 var codes = exports.code = exports.codes = {
   'backspace': 8,
   'tab': 9,
@@ -87,6 +89,8 @@ var codes = exports.code = exports.codes = {
   "'": 222
 }
 
+// Helper aliases
+
 var aliases = exports.aliases = {
   'ctl': 17,
   'pause': 19,
@@ -99,6 +103,7 @@ var aliases = exports.aliases = {
   'del': 46,
   'spc': 32
 }
+
 
 /*!
  * Programatically add the following
