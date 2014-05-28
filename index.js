@@ -1,7 +1,7 @@
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
-var has = ({}).hasOwnProperty
+
 
 /**
  * Conenience method returns corresponding value for given keyName or keyCode.
