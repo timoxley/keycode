@@ -2,7 +2,7 @@
   "name": "keycode",
   "repo": "timoxley/keycode",
   "description": "Map of keyboard codes",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "main": "index.js",
   "directories": {
     "example": "examples",
