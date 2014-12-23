@@ -1,7 +1,7 @@
 {
   "name": "keycode",
   "description": "Map of keyboard codes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "directories": {
     "example": "examples",
