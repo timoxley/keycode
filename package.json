@@ -1,7 +1,7 @@
 {
   "name": "keycode",
-  "description": "Map of keyboard codes",
-  "version": "1.0.1",
+  "description": "Convert between keyboard keycodes and keynames and vice versa.",
+  "version": "2.0.0",
   "main": "index.js",
   "directories": {
     "example": "examples",
@@ -14,7 +14,6 @@
     "type": "git",
     "url": "git://github.com/timoxley/keycode.git"
   },
-  "author": "Tim Oxley",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/timoxley/keycode/issues"
@@ -24,5 +23,16 @@
   },
   "homepage": "https://github.com/timoxley/keycode",
   "dependencies": {},
-  "keywords": []
+  "keywords": [
+    "keyboard",
+    "keycode",
+    "keyboardevent",
+    "ascii",
+    "keydown",
+    "keyup",
+    "metakey",
+    "keyname",
+    "keypress"
+  ],
+  "author": "Tim Oxley <secoif@gmail.com>"
 }
