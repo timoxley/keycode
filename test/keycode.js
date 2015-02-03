@@ -91,3 +91,8 @@ it('exposes keycode/name maps', function() {
   }
 })
 
+it('should return shift, ctrl, and alt for 16, 17, and 18', function() {
+  assert.strictEqual(keycode(16), 'shift')
+  assert.strictEqual(keycode(17), 'ctrl')
+  assert.strictEqual(keycode(18), 'alt')
+})

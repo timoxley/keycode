@@ -65,7 +65,6 @@ var codes = exports.code = exports.codes = {
   'down': 40,
   'insert': 45,
   'delete': 46,
-  'windows': 91,
   'command': 91,
   'right click': 93,
   'numpad *': 106,
@@ -88,20 +87,18 @@ var codes = exports.code = exports.codes = {
   '\\': 220,
   ']': 221,
   "'": 222,
-  '⇧': 16,
-  '⌥': 18,
-  '⌃': 17,
-  '⌘': 91,
 }
 
 // Helper aliases
 
 var aliases = exports.aliases = {
-  'shift': 16,
+  'windows': 91,
+  '⇧': 16,
+  '⌥': 18,
+  '⌃': 17,
+  '⌘': 91,
   'ctl': 17,
-  'ctrl': 17,
   'control': 17,
-  'alt': 18,
   'option': 18,
   'pause': 19,
   'break': 19,
