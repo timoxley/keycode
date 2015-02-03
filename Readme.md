@@ -6,6 +6,13 @@
 
 ## Installation
 
+#### npm
+
+```
+$ npm install keycode
+```
+
+#### component
 ```
 $ component install timoxley/keycode
 ```
