@@ -85,6 +85,24 @@ keycode.codes['Enter'] // => 13
 
 ## Credit
 
+```
+ project  : keycode
+ repo age : 2 years, 4 months
+ active   : 19 days
+ commits  : 48
+ files    : 13
+ authors  :
+    26	Tim Oxley        54.2%
+    10	Tim              20.8%
+     4	jkroso           8.3%
+     3	Amir Abu Shareb  6.2%
+     1	TJ Holowaychuk   2.1%
+     1	Nathan Zadoks    2.1%
+     1	Kenan Yildirim   2.1%
+     1	Yoshua Wuyts     2.1%
+     1	Greg Reimer      2.1%
+```
+
 Original key mappings lifted from http://jsfiddle.net/vWx8V/ via http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
 ## License
