@@ -65,7 +65,7 @@ var codes = exports.code = exports.codes = {
   'down': 40,
   'insert': 45,
   'delete': 46,
-  'command': 91,
+  'meta': 91,
   'right click': 93,
   'numpad *': 106,
   'numpad +': 107,
@@ -92,6 +92,7 @@ var codes = exports.code = exports.codes = {
 // Helper aliases
 
 var aliases = exports.aliases = {
+  'command': 91,
   'windows': 91,
   '⇧': 16,
   '⌥': 18,
@@ -137,8 +138,13 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
 
 var names = exports.names = exports.title = {} // title for backward compat
 
+var canonicalCodes = exports._canonicalCodes = {} // for internal use
+
 // Create reverse mapping
-for (i in codes) names[codes[i]] = i
+for (i in codes) {
+  names[codes[i]] = i
+  canonicalCodes[i] = codes[i]
+}
 
 // Add aliases
 for (var alias in aliases) {
