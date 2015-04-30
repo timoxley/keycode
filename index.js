@@ -103,6 +103,7 @@ var aliases = exports.aliases = {
   'pause': 19,
   'break': 19,
   'caps': 20,
+  'return': 13,
   'escape': 27,
   'spc': 32,
   'pgup': 33,
