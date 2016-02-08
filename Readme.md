@@ -8,12 +8,12 @@
 
 #### npm
 
-```
+```sh
 $ npm install keycode
 ```
 
 #### component
-```
+```sh
 $ component install timoxley/keycode
 ```
 
