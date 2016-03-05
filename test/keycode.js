@@ -96,3 +96,20 @@ it('should return shift, ctrl, and alt for 16, 17, and 18', function() {
   assert.strictEqual(keycode(17), 'ctrl')
   assert.strictEqual(keycode(18), 'alt')
 })
+
+it('should not have mapping collisions in canonical codes', function() {
+  var dedupe = {}
+  var canon = keycode._canonicalCodes
+  for (var key in canon) {
+    var val = canon[key]
+    var isDupe = dedupe[val]
+    var dupeKey, dupeVal
+    if (isDupe) {
+      dupeKey = isDupe.key
+      dupeVal = isDupe.val
+    }
+    assert.ok(!isDupe, 'mapping conflict in canonical codes: ' + key + ' => ' + val + ', ' + dupeKey + ' => ' + dupeVal)
+    dedupe[val] = {key:key,val:val}
+  }
+})
+
