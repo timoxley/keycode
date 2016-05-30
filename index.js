@@ -105,7 +105,7 @@ var aliases = exports.aliases = {
   'escape': 27,
   'spc': 32,
   'pgup': 33,
-  'pgdn': 33,
+  'pgdn': 34,
   'ins': 45,
   'del': 46,
   'cmd': 91
