@@ -34,5 +34,6 @@
     "keyname",
     "keypress"
   ],
-  "author": "Tim Oxley <secoif@gmail.com>"
+  "author": "Tim Oxley <secoif@gmail.com>",
+  "typings": "./keycode.d.ts"
 }
