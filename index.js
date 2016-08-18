@@ -133,7 +133,7 @@ var aliases = keycode.aliases = {
 for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
 
 // numbers
-for (var i = 48; i < 58; i++) codes[i - 48] = i
+for (var i = 0; i < 10; i++) codes[i] = i + 48
 
 // function keys
 for (i = 1; i < 13; i++) codes['f'+i] = i + 111
