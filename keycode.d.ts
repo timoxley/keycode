@@ -1,22 +1,20 @@
-declare namespace Keycode {
-    interface CodesMap {
-        [key: string]: number;
-    }
-    
-    interface KeycodeStatic {
-        (event: Event): string;
-        (keycode: number): string;
-        (name: string): number;
-        code: CodesMap;
-        codes: CodesMap;
-        aliases: CodesMap;
-        names: CodesMap;
-        title: CodesMap;
-    }
-}
+declare interface CodesMap {
+  [key: string]: number;
+};
 
-declare var keycode: Keycode.KeycodeStatic;
+declare interface InverseCodesMap {
+  [key: number]: string;
+};
 
-declare module "keycode" {
-    export = keycode;
-}
+declare interface Keycode {
+  (event: Event): string;
+  (keycode: number): string;
+  (name: string): number;
+  codes: CodesMap;
+  aliases: CodesMap;
+  names: InverseCodesMap;
+};
+
+declare var keycode: Keycode;
+
+export default keycode;
