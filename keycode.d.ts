@@ -15,8 +15,8 @@ declare namespace Keycode {
     }
 }
 
-declare var keycode: Keycode.KeycodeStatic;
+declare var codes: Keycode.KeycodeStatic;
 
-declare module "keycode" {
-    export = keycode;
-}
+export {
+    codes
+};
