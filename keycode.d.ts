@@ -1,10 +1,10 @@
 declare interface CodesMap {
   [key: string]: number;
-};
+}
 
 declare interface InverseCodesMap {
   [key: number]: string;
-};
+}
 
 declare interface Keycode {
   (event: Event): string;
@@ -13,8 +13,8 @@ declare interface Keycode {
   codes: CodesMap;
   aliases: CodesMap;
   names: InverseCodesMap;
-};
+}
 
 declare var keycode: Keycode;
 
-export default keycode;
+export = keycode;
