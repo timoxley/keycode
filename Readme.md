@@ -32,7 +32,7 @@ document.addEventListener('keydown', function(e) {
 you're trying to discover based on the type of argument
 you supply.
 
-##keycode(keycode:Event)
+### keycode(keycode:Event)
 
 Returns the name of the key associated with this event.
 
@@ -44,7 +44,7 @@ document.body.addEventListener('keyup', function(e) {
 
 [Due to the keypress event being weird](https://github.com/timoxley/keycode/wiki/wtf%3F-keydown,-keyup-vs-keypress),`keycode `currently does not support the `keypress` event, but this should not be an issue as `keydown` and `keyup` work perfectly fine.
 
-##keycode(keycode:Number)
+### keycode(keycode:Number)
 
 Returns the lowercase name of a given numeric keycode.
 
@@ -52,7 +52,7 @@ Returns the lowercase name of a given numeric keycode.
 keycode(13) // => 'enter'
 ```
 
-##keycode(name:String)
+### keycode(name:String)
 
 Returns the numeric keycode for given key name.
 
