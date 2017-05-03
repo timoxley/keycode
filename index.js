@@ -9,7 +9,19 @@
  * @api public
  */
 
-exports = module.exports = function(searchInput) {
+(function (root, factory) {
+  if(typeof define === "function" && define.amd) {
+    // the AMD environment.
+    root.keycode = factory()
+  } else if(typeof module === "object" && module.exports) {
+    // CommonJS environment
+    exports = module.exports = (root.keycode = factory());
+  } else {
+    root.keycode = factory();
+  }
+}(this, function() {
+
+var keycode = function(searchInput) {
   // Keyboard Events
   if (searchInput && 'object' === typeof searchInput) {
     var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode
@@ -39,10 +51,10 @@ exports = module.exports = function(searchInput) {
 /**
  * Get by name
  *
- *   exports.code['enter'] // => 13
+ *   keycode.code['enter'] // => 13
  */
 
-var codes = exports.code = exports.codes = {
+var codes = keycode.code = keycode.codes = {
   'backspace': 8,
   'tab': 9,
   'enter': 13,
@@ -90,7 +102,7 @@ var codes = exports.code = exports.codes = {
 
 // Helper aliases
 
-var aliases = exports.aliases = {
+var aliases = keycode.aliases = {
   'windows': 91,
   '⇧': 16,
   '⌥': 18,
@@ -121,7 +133,7 @@ var aliases = exports.aliases = {
 for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
 
 // numbers
-for (var i = 48; i < 58; i++) codes[i - 48] = i
+for (var i = 0; i < 10; i++) codes[i] = i + 48
 
 // function keys
 for (i = 1; i < 13; i++) codes['f'+i] = i + 111
@@ -132,10 +144,10 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
 /**
  * Get by code
  *
- *   exports.name[13] // => 'Enter'
+ *   keycode.name[13] // => 'Enter'
  */
 
-var names = exports.names = exports.title = {} // title for backward compat
+var names = keycode.names = keycode.title = {} // title for backward compat
 
 // Create reverse mapping
 for (i in codes) names[codes[i]] = i
@@ -144,3 +156,7 @@ for (i in codes) names[codes[i]] = i
 for (var alias in aliases) {
   codes[alias] = aliases[alias]
 }
+
+return keycode;
+
+}));
