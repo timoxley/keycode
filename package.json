@@ -1,7 +1,7 @@
 {
   "name": "keycode",
   "description": "Convert between keyboard keycodes and keynames and vice versa.",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "main": "index.js",
   "directories": {
     "example": "examples",
