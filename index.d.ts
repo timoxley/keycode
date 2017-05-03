@@ -1,3 +1,8 @@
+export = keycode;
+export as namespace keycode;
+
+declare const keycode: Keycode;
+
 declare interface CodesMap {
   'backspace': number;
   'tab': number;
@@ -135,10 +140,4 @@ declare interface Keycode {
   codes: CodesMap;
   aliases: AliasesMap;
   names: InverseCodesMap;
-}
-
-declare var keycode: Keycode;
-
-declare module "keycode" {
-  export = keycode;
 }
