@@ -39,6 +39,7 @@ function keyCode(searchInput) {
 /**
  * Compares a keyboard event with a given keyCode or keyName.
  *
+ * @param {Event} event Keyboard event that should be tested
  * @param {Mixed} keyCode {Number} or keyName {String}
  * @return {Boolean}
  * @api public
