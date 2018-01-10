@@ -12,29 +12,32 @@
 exports = module.exports = function(searchInput) {
   // Keyboard Events
   if (searchInput && 'object' === typeof searchInput) {
-    var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode
+    var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode;
     if (hasKeyCode) searchInput = hasKeyCode
   }
 
   // Numbers
-  if ('number' === typeof searchInput) return names[searchInput]
+  if ('number' === typeof searchInput) {
+      if(names[searchInput]) return names[searchInput];
+      return firefoxCodes[searchInput]
+  }
 
   // Everything else (cast to string)
-  var search = String(searchInput)
+  var search = String(searchInput);
 
   // check codes
-  var foundNamedKey = codes[search.toLowerCase()]
-  if (foundNamedKey) return foundNamedKey
+  var foundNamedKey = codes[search.toLowerCase()];
+  if (foundNamedKey) return foundNamedKey;
 
   // check aliases
-  var foundNamedKey = aliases[search.toLowerCase()]
-  if (foundNamedKey) return foundNamedKey
+  var foundNamedKey = aliases[search.toLowerCase()];
+  if (foundNamedKey) return foundNamedKey;
 
   // weird character?
-  if (search.length === 1) return search.charCodeAt(0)
+  if (search.length === 1) return search.charCodeAt(0);
 
   return undefined
-}
+};
 
 /**
  * Get by name
@@ -85,8 +88,8 @@ var codes = exports.code = exports.codes = {
   '[': 219,
   '\\': 220,
   ']': 221,
-  "'": 222
-}
+  "'": 222,
+};
 
 // Helper aliases
 
@@ -109,9 +112,13 @@ var aliases = exports.aliases = {
   'pgdn': 34,
   'ins': 45,
   'del': 46,
-  'cmd': 91
-}
+  'cmd': 91,
+};
 
+var franceLocaleFirefoxCodes = {
+    ':': 58,
+    '.': 59,
+};
 
 /*!
  * Programatically add the following
@@ -135,10 +142,12 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
  *   exports.name[13] // => 'Enter'
  */
 
-var names = exports.names = exports.title = {} // title for backward compat
+var names = exports.names = exports.title = {}; // title for backward compat
+var firefoxCodes = exports.codesForFirefox = exports.title = {}; // title for backward compat
 
 // Create reverse mapping
 for (i in codes) names[codes[i]] = i
+for (i in franceLocaleFirefoxCodes) firefoxCodes[franceLocaleFirefoxCodes[i]] = i
 
 // Add aliases
 for (var alias in aliases) {

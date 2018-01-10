@@ -133,11 +133,16 @@ declare interface InverseCodesMap {
   [key: number]: string;
 }
 
+declare interface FirefoxCodesMap {
+    [key: number]: string;
+}
+
 declare interface Keycode {
   (event: Event): string;
   (keycode: number): string;
   (name: string): number;
   codes: CodesMap;
+  codesForFirefox: FirefoxCodesMap;
   aliases: AliasesMap;
   names: InverseCodesMap;
 }
