@@ -85,7 +85,11 @@ var codes = exports.code = exports.codes = {
   '[': 219,
   '\\': 220,
   ']': 221,
-  "'": 222
+  "'": 222,
+    // extra keycode for Mozilla Firefox French keyboard
+  '!': 161,
+  ':': 58,
+  'semicolon': 59
 }
 
 // Helper aliases

@@ -96,3 +96,9 @@ it('should return shift, ctrl, and alt for 16, 17, and 18', function() {
   assert.strictEqual(keycode(17), 'ctrl')
   assert.strictEqual(keycode(18), 'alt')
 })
+
+it('should return exclamation mark, colon, and semicolon for 161, 58, and 59', function() {
+    assert.strictEqual(keycode(161), '!')
+    assert.strictEqual(keycode(58), ':')
+    assert.strictEqual(keycode(59), 'semicolon')
+})
