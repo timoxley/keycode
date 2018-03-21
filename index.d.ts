@@ -141,4 +141,5 @@ declare interface Keycode {
   codes: CodesMap;
   aliases: AliasesMap;
   names: InverseCodesMap;
+  isEventKey: (event: Event, nameOrCode: number | string) => boolean;
 }
