@@ -53,7 +53,6 @@ var codes = exports.code = exports.codes = {
   'caps lock': 20,
   'esc': 27,
   'space': 32,
-  'Spacebar': 32,
   'page up': 33,
   'page down': 34,
   'end': 35,
@@ -106,13 +105,13 @@ var aliases = exports.aliases = {
   'return': 13,
   'escape': 27,
   'spc': 32,
+  'spacebar': 32,
   'pgup': 33,
   'pgdn': 34,
   'ins': 45,
   'del': 46,
   'cmd': 91
 }
-
 
 /*!
  * Programatically add the following

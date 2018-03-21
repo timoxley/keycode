@@ -14,7 +14,6 @@ declare interface CodesMap {
   'caps lock': number;
   'esc': number;
   'space': number;
-  'Spacebar': number;
   'page up': number;
   'page down': number;
   'end': number;
@@ -123,6 +122,7 @@ declare interface AliasesMap {
   'return': number;
   'escape': number;
   'spc': number;
+  'spacebar': number;
   'pgup': number;
   'pgdn': number;
   'ins': number;
