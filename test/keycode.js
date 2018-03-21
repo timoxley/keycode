@@ -34,6 +34,7 @@ it('is case insensitive', function() {
   assert.strictEqual(keycode('enter'), 13);
   assert.strictEqual(keycode('ENTER'), 13);
   assert.strictEqual(keycode('enTeR'), 13);
+  assert.strictEqual(keycode('Spacebar'), 32);
 })
 
 it('returns char code for strange chars', function() {

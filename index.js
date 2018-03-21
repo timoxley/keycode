@@ -53,6 +53,7 @@ var codes = exports.code = exports.codes = {
   'caps lock': 20,
   'esc': 27,
   'space': 32,
+  'Spacebar': 32,
   'page up': 33,
   'page down': 34,
   'end': 35,
