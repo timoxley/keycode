@@ -9,7 +9,7 @@
  * @api public
  */
 
-function keyCode(searchInput) {
+export function keyCode(searchInput) {
   // Keyboard Events
   if (searchInput && 'object' === typeof searchInput) {
     var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode
@@ -44,7 +44,7 @@ function keyCode(searchInput) {
  * @return {Boolean}
  * @api public
  */
-keyCode.isEventKey = function isEventKey(event, nameOrCode) {
+export function isEventKey(event, nameOrCode) {
   if (event && 'object' === typeof event) {
     var keyCode = event.which || event.keyCode || event.charCode
     if (keyCode === null || keyCode === undefined) { return false; }
@@ -63,15 +63,13 @@ keyCode.isEventKey = function isEventKey(event, nameOrCode) {
   }
 }
 
-exports = module.exports = keyCode;
-
 /**
  * Get by name
  *
- *   exports.code['enter'] // => 13
+ *   codes['enter'] // => 13
  */
 
-var codes = exports.code = exports.codes = {
+export var codes = {
   'backspace': 8,
   'tab': 9,
   'enter': 13,
@@ -119,7 +117,7 @@ var codes = exports.code = exports.codes = {
 
 // Helper aliases
 
-var aliases = exports.aliases = {
+export var aliases = {
   'windows': 91,
   '⇧': 16,
   '⌥': 18,
@@ -161,10 +159,10 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
 /**
  * Get by code
  *
- *   exports.name[13] // => 'Enter'
+ *   names[13] // => 'Enter'
  */
 
-var names = exports.names = exports.title = {} // title for backward compat
+export var names = {}
 
 // Create reverse mapping
 for (i in codes) names[codes[i]] = i

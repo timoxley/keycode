@@ -2,13 +2,18 @@
   "name": "keycode",
   "description": "Convert between keyboard keycodes and keynames and vice versa.",
   "version": "2.2.0",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "directories": {
     "example": "examples",
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/keycode.js"
+    "test": "mocha test/keycode.js",
+    "cjs": "rollup --input index.js --file dist/index.cjs.js --format cjs",
+    "esm": "rollup --input index.js --file dist/index.esm.js --format esm",
+    "build": "rm -rf dist && yarn cjs && yarn esm",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -19,7 +24,8 @@
     "url": "https://github.com/timoxley/keycode/issues"
   },
   "devDependencies": {
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "rollup": "^0.65.2"
   },
   "homepage": "https://github.com/timoxley/keycode",
   "dependencies": {},

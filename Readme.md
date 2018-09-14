@@ -20,7 +20,7 @@ $ component install timoxley/keycode
 ## Example
 
 ```js
-var keycode = require('keycode');
+import { keycode, isEventKey, codes, aliases, names } from 'keycode';
 document.addEventListener('keydown', function(e) {
   console.log("You pressed", keycode(e))
 })
@@ -68,7 +68,7 @@ keycode('eNtEr') // => 13
 Common aliases are also supplied:
 
 ```js
-> for (var alias in keycode.aliases) { console.log(alias, keycode(keycode(alias))) }
+> for (var alias in aliases) { console.log(alias, keycode(keycode(alias))) }
 ctl ctrl
 pause pause/break
 break pause/break
@@ -81,28 +81,28 @@ del delete
 spc space
 ```
 
-## keycode.isEventKey(event: Event, nameOrCode: String | Number)
+## isEventKey(event: Event, nameOrCode: String | Number)
 
 Tests if an keyboard event against a given name or keycode.
 Will return `true` if the event matches the given name or keycode, `false` otherwise.
 
 ```js
 // assume event is an keydown event with key 'enter'
-keycode.isEventKey(event, 'enter') // => true
-keycode.isEventKey(event, 'down') // => false
+isEventKey(event, 'enter') // => true
+isEventKey(event, 'down') // => false
 
-keycode.isEventKey(event, 13) // => true
-keycode.isEventKey(event, 40) // => false
+isEventKey(event, 13) // => true
+isEventKey(event, 40) // => false
 ```
 
 
 ## Maps
 
-Key code/name maps are available directly as `keycode.codes` and `keycode.names` respectively.
+Key code/name maps are available directly as `codes` and `names` respectively.
 
 ```js
-keycode.names[13] // => 'enter'
-keycode.codes['enter'] // => 13
+names[13] // => 'enter'
+codes['enter'] // => 13
 ```
 
 ## Credit

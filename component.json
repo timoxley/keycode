@@ -7,7 +7,7 @@
     "timoxley/assert": "*"
   },
   "scripts": [
-    "index.js"
+    "dist/index.cjs.js"
   ],
   "license": "MIT",
   "keywords": [
