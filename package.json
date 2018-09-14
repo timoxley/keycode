@@ -9,7 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test/keycode.js",
+    "test": "yarn cjs && mocha test/keycode.js",
     "cjs": "rollup --input index.js --file dist/index.cjs.js --format cjs",
     "esm": "rollup --input index.js --file dist/index.esm.js --format esm",
     "build": "rm -rf dist && yarn cjs && yarn esm",

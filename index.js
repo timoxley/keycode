@@ -9,7 +9,7 @@
  * @api public
  */
 
-export function keyCode(searchInput) {
+export function keycode(searchInput) {
   // Keyboard Events
   if (searchInput && 'object' === typeof searchInput) {
     var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode

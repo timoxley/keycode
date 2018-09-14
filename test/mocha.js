@@ -19,7 +19,7 @@ require.modules = {};
 require.resolve = function (path){
     var orig = path
       , reg = path + '.js'
-      , index = path + '/index.js';
+      , index = path + '/dist/index.cjs.js';
     return require.modules[reg] && reg
       || require.modules[index] && index
       || orig;

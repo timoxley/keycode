@@ -2,10 +2,10 @@
 
 // check if is component
 if (require.modules) {
-  var keycode = require('keycode')
+  var { keycode, isEventKey, names, codes, aliases } = require('keycode')
   var assert = require('timoxley-assert')
 } else {
-  var keycode = require('../')
+  var { keycode, isEventKey, names, codes, aliases } = require('../')
   var assert = require('assert')
 }
 
@@ -23,7 +23,7 @@ it('can use aliases from a letter', function() {
 })
 
 it('does not use alias name when mapping back from a number', function() {
-  for (var key in keycode.aliases) {
+  for (var key in aliases) {
     assert.notStrictEqual(keycode(keycode(key)), key);
   }
 })
@@ -81,14 +81,14 @@ it('returns undefined for any other passed in type', function() {
 })
 
 it('is commutative', function() {
-  for (var key in keycode.code) {
+  for (var key in codes) {
     assert.strictEqual(keycode(key), keycode(keycode(keycode(key))))
   }
 })
 
 it('exposes keycode/name maps', function() {
-  for (var code in keycode.codes) {
-    assert.strictEqual(keycode(code), keycode(keycode.names[keycode.codes[code]]))
+  for (var code in codes) {
+    assert.strictEqual(keycode(code), keycode(names[codes[code]]))
   }
 })
 
@@ -102,32 +102,32 @@ describe('isEventKey', function() {
   
   it('should allow to compare events to their names', function() {
     var event = { which: 13, keyCode: 13, charCode: 13 };
-    assert.strictEqual(keycode.isEventKey(event, 'enter'), true);
-    assert.strictEqual(keycode.isEventKey(event, 'down'), false);
+    assert.strictEqual(isEventKey(event, 'enter'), true);
+    assert.strictEqual(isEventKey(event, 'down'), false);
   });
   
   it('should allow to compare events to their names (case insensitive)', function() {
     var event = { which: 13, keyCode: 13, charCode: 13 };
-    assert.strictEqual(keycode.isEventKey(event, 'eNtER'), true);
-    assert.strictEqual(keycode.isEventKey(event, 'dOWN'), false);
+    assert.strictEqual(isEventKey(event, 'eNtER'), true);
+    assert.strictEqual(isEventKey(event, 'dOWN'), false);
   });
   
   it('should return false if a ', function() {
     var event = { which: 13, keyCode: 13, charCode: 13 };
-    assert.strictEqual(keycode.isEventKey(event, 'eNtER'), true);
-    assert.strictEqual(keycode.isEventKey(event, 'dOWN'), false);
+    assert.strictEqual(isEventKey(event, 'eNtER'), true);
+    assert.strictEqual(isEventKey(event, 'dOWN'), false);
   });
   
   it('should allow to compare events to their keyCodes)', function() {
     var event = { which: 13, keyCode: 13, charCode: 13 };
-    assert.strictEqual(keycode.isEventKey(event, 13), true);
-    assert.strictEqual(keycode.isEventKey(event, 14), false);
+    assert.strictEqual(isEventKey(event, 13), true);
+    assert.strictEqual(isEventKey(event, 14), false);
   });
 
   it('should not break when invalid key codes are entered, instead false should be returned', function() {
     var event = { which: -1, keyCode: -1, charCode: -1 };
-    assert.strictEqual(keycode.isEventKey(event, 'enter'), false);
-    assert.strictEqual(keycode.isEventKey(event, 'down'), false);
+    assert.strictEqual(isEventKey(event, 'enter'), false);
+    assert.strictEqual(isEventKey(event, 'down'), false);
   });
 
 });
