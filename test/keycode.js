@@ -98,6 +98,11 @@ it('should return shift, ctrl, and alt for 16, 17, and 18', function() {
   assert.strictEqual(keycode(18), 'alt')
 })
 
+it('should return command code for all broswers', function() {
+  assert.strictEqual(keycode(91), 'left command');       //  Chrome and Safari
+  assert.strictEqual(keycode(224), 'command (firefox)'); //  Firefox
+})
+
 describe('isEventKey', function() {
   
   it('should allow to compare events to their names', function() {
@@ -118,7 +123,7 @@ describe('isEventKey', function() {
     assert.strictEqual(keycode.isEventKey(event, 'dOWN'), false);
   });
   
-  it('should allow to compare events to their keyCodes)', function() {
+  it('should allow to compare events to their keyCodes', function() {
     var event = { which: 13, keyCode: 13, charCode: 13 };
     assert.strictEqual(keycode.isEventKey(event, 13), true);
     assert.strictEqual(keycode.isEventKey(event, 14), false);
@@ -128,6 +133,11 @@ describe('isEventKey', function() {
     var event = { which: -1, keyCode: -1, charCode: -1 };
     assert.strictEqual(keycode.isEventKey(event, 'enter'), false);
     assert.strictEqual(keycode.isEventKey(event, 'down'), false);
+  });
+
+  it('should alias `command` in firefox', function() {
+    var event = { which: 224, keyCode: 224, charCode: 0 };
+    assert.strictEqual(keycode.isEventKey(event, 'command'), true);
   });
 
 });

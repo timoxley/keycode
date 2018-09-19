@@ -114,7 +114,8 @@ var codes = exports.code = exports.codes = {
   '[': 219,
   '\\': 220,
   ']': 221,
-  "'": 222
+  "'": 222,
+  'command (firefox)': 224 
 }
 
 // Helper aliases
@@ -139,7 +140,8 @@ var aliases = exports.aliases = {
   'pgdn': 34,
   'ins': 45,
   'del': 46,
-  'cmd': 91
+  'cmd': 91,
+  'command': 224
 }
 
 /*!
