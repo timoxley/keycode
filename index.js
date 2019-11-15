@@ -65,12 +65,6 @@ keyCode.isEventKey = function isEventKey(event, nameOrCode) {
 
 exports = module.exports = keyCode;
 
-/**
- * Get by name
- *
- *   exports.code['enter'] // => 13
- */
-
 var codes = exports.code = exports.codes = {
   'backspace': 8,
   'tab': 9,
@@ -157,12 +151,6 @@ for (i = 1; i < 13; i++) codes['f'+i] = i + 111
 
 // numpad keys
 for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
-
-/**
- * Get by code
- *
- *   exports.name[13] // => 'Enter'
- */
 
 var names = exports.names = exports.title = {} // title for backward compat
 
