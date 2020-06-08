@@ -1,13 +1,20 @@
 {
-  "name": "keycode",
+  "name": "@get-wrecked/keycode",
   "description": "Convert between keyboard keycodes and keynames and vice versa.",
-  "version": "2.2.1",
-  "main": "index.js",
+  "version": "2.2.2",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "directories": {
     "example": "examples",
     "test": "test"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
+    "build": "babel src -d dist",
     "test": "mocha test/keycode.js"
   },
   "repository": {
@@ -22,7 +29,12 @@
     "mocha": "^3.0.2"
   },
   "homepage": "https://github.com/get-wrecked/keycode",
-  "dependencies": {},
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-cli": "*",
+    "babel-plugin-root-import": "^6.5.0"
+  },
   "keywords": [
     "keyboard",
     "keycode",
@@ -35,5 +47,5 @@
     "keypress"
   ],
   "author": "Tim Oxley <secoif@gmail.com>",
-  "typings": "./index.d.ts"
+  "typings": "./src/index.d.ts"
 }
