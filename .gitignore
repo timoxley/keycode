@@ -1,5 +1,5 @@
 components
-dist
+build
 node_modules
 .idea/
 package-lock.json
