@@ -153,7 +153,7 @@ for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
 for (var i = 48; i < 58; i++) codes[i - 48] = i
 
 // function keys
-for (i = 1; i < 13; i++) codes['f'+i] = i + 111
+for (i = 1; i <= 24; i++) codes['f' + i] = i + 111
 
 // numpad keys
 for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
