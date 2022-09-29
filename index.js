@@ -137,6 +137,10 @@ var aliases = exports.aliases = {
   'spacebar': 32,
   'pgup': 33,
   'pgdn': 34,
+  'arrowleft': 37,
+  'arrowup': 38,
+  'arrowright': 39,
+  'arrowdown': 40,
   'ins': 45,
   'del': 46,
   'cmd': 91
