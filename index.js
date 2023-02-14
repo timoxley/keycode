@@ -12,26 +12,26 @@
 function keyCode(searchInput) {
   // Keyboard Events
   if (searchInput && 'object' === typeof searchInput) {
-    var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode
+    var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode;
     if (hasKeyCode) searchInput = hasKeyCode
   }
 
   // Numbers
-  if ('number' === typeof searchInput) return names[searchInput]
+  if ('number' === typeof searchInput) return names[searchInput];
 
   // Everything else (cast to string)
-  var search = String(searchInput)
+  var search = String(searchInput);
 
   // check codes
-  var foundNamedKey = codes[search.toLowerCase()]
-  if (foundNamedKey) return foundNamedKey
+  var foundNamedKey = codes[search.toLowerCase()];
+  if (foundNamedKey) return foundNamedKey;
 
   // check aliases
-  var foundNamedKey = aliases[search.toLowerCase()]
-  if (foundNamedKey) return foundNamedKey
+  var foundNamedKey = aliases[search.toLowerCase()];
+  if (foundNamedKey) return foundNamedKey;
 
   // weird character?
-  if (search.length === 1) return search.charCodeAt(0)
+  if (search.length === 1) return search.charCodeAt(0);
 
   return undefined
 }
@@ -46,22 +46,22 @@ function keyCode(searchInput) {
  */
 keyCode.isEventKey = function isEventKey(event, nameOrCode) {
   if (event && 'object' === typeof event) {
-    var keyCode = event.which || event.keyCode || event.charCode
+    var keyCode = event.which || event.keyCode || event.charCode;
     if (keyCode === null || keyCode === undefined) { return false; }
     if (typeof nameOrCode === 'string') {
       // check codes
-      var foundNamedKey = codes[nameOrCode.toLowerCase()]
+      var foundNamedKey = codes[nameOrCode.toLowerCase()];
       if (foundNamedKey) { return foundNamedKey === keyCode; }
     
       // check aliases
-      var foundNamedKey = aliases[nameOrCode.toLowerCase()]
+      var foundNamedKey = aliases[nameOrCode.toLowerCase()];
       if (foundNamedKey) { return foundNamedKey === keyCode; }
     } else if (typeof nameOrCode === 'number') {
       return nameOrCode === keyCode;
     }
     return false;
   }
-}
+};
 
 exports = module.exports = keyCode;
 
@@ -115,7 +115,7 @@ var codes = exports.code = exports.codes = {
   '\\': 220,
   ']': 221,
   "'": 222
-}
+};
 
 // Helper aliases
 
@@ -140,23 +140,23 @@ var aliases = exports.aliases = {
   'ins': 45,
   'del': 46,
   'cmd': 91
-}
+};
 
 /*!
  * Programatically add the following
  */
 
 // lower case chars
-for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
+for (let i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32;
 
 // numbers
-for (var i = 48; i < 58; i++) codes[i - 48] = i
+for (let i = 48; i < 58; i++) codes[i - 48] = i;
 
 // function keys
-for (i = 1; i < 13; i++) codes['f'+i] = i + 111
+for (let i = 1; i <= 24; i++) codes['f' + i] = i + 111;
 
 // numpad keys
-for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
+for (let i = 0; i < 10; i++) codes['numpad '+i] = i + 96;
 
 /**
  * Get by code
@@ -164,10 +164,10 @@ for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
  *   exports.name[13] // => 'Enter'
  */
 
-var names = exports.names = exports.title = {} // title for backward compat
+var names = exports.names = exports.title = {}; // title for backward compat
 
 // Create reverse mapping
-for (i in codes) names[codes[i]] = i
+for (let i in codes) names[codes[i]] = i;
 
 // Add aliases
 for (var alias in aliases) {

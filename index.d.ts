@@ -95,6 +95,18 @@ declare interface CodesMap {
   'f10': number;
   'f11': number;
   'f12': number;
+  'f13': number;
+  'f14': number;
+  'f15': number;
+  'f16': number;
+  'f17': number;
+  'f18': number;
+  'f19': number;
+  'f20': number;
+  'f21': number;
+  'f22': number;
+  'f23': number;
+  'f24': number;
   'numpad 0': number;
   'numpad 1': number;
   'numpad 2': number;
