@@ -167,7 +167,7 @@ for (let i = 0; i < 10; i++) codes['numpad '+i] = i + 96;
 var names = exports.names = exports.title = {}; // title for backward compat
 
 // Create reverse mapping
-for (i in codes) names[codes[i]] = i;
+for (let i in codes) names[codes[i]] = i;
 
 // Add aliases
 for (var alias in aliases) {
